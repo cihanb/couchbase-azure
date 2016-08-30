@@ -25,17 +25,16 @@
 # Script Name: settings.sh
 # Author: Cihan Biyikoglu - github:(cihanb)
 
-
 ##couchbase settings
 #total nodes in cluster
 couchbase_total_nodes=3
 #ubuntu 14 image for couchbase server. version can be 4.0 or later
-couchbase_download="http://packages.couchbase.com/releases/4.5.0-beta/couchbase-server-enterprise_4.5.0-beta-ubuntu14.04_amd64.deb"
-couchbase_binary="couchbase-server-enterprise_4.5.0-beta-ubuntu14.04_amd64.deb"
+couchbase_download="http://packages.couchbase.com/releases/4.5.0/couchbase-server-enterprise_4.5.0-ubuntu14.04_amd64.deb"
+couchbase_binary="couchbase-server-enterprise_4.5.0-ubuntu14.04_amd64.deb"
 #TODO: change this username
-couchbase_admin_account_name="cb_dbadmin"
+couchbase_admin_account_name="administrator"
 #TODO: change this password
-couchbase_admin_account_password="couchB@SE123"
+couchbase_admin_account_password="password"
 #couchbase services on nodes
 couchbase_node_services="data,query,index"
 #ram configurations
@@ -47,18 +46,18 @@ couchbase_cluster_ramsize=1000
 azure_account="your_account@your_domain.onmicrosoft.com"
 azure_subscription_id="00000000-0000-0000-0000-000000000000"
 #TODO: certs for ssh. use ssh-keygen to generate the keys - public and private
-vm_auth_cert_public="~/your_public_key.pub"
-vm_auth_cert_private="~/your_private_key.key"
+vm_auth_cert_public="~/.ssh/id_rsa.pub"
+vm_auth_cert_private="~/.ssh_id_rsa"
 #prefix to use for the VM name for all nodes 
 vm_name_prefix="cb_"
 #vnet name to keeps azure vms in the same subnet 
 vnet_name="cb-vnet1" 
 #azure service name for all nodes
-service_name="couchbase-service"
+service_name="cbase-service"
 #region where to provision all nodes
 region="'west US'"
 #number of data-disks to attach - check the max data-disk allowed on each SKU
-data_disk_count=4
+data_disk_count=2
 #size of the data-disk in GB max is 1023
 data_disk_size=1023
 
