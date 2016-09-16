@@ -5,7 +5,7 @@ This repo provides, simple and automated setup for couchbase server cluster on a
 _Limitations_: 
 - _xdcr (cross data-center replication)_: you can use the scripts to deploy 2 clusters to 2 seperate regions. however the scripts are not design to make xdcr working with couchbase server. there are a few other tricks required to do that.
 
-## OSx Scripts (Scripts for MacOS): 
+## OSx Scripts (scripts for MacOS): 
 OSx script for setting up a multi node Couchbase Server cluster on Azure VMs.
 
 ### Prerequisites
@@ -109,9 +109,9 @@ settings.sh: setting file for the automated cluster setup. seach for and modify 
 ````
 
 
-###Create Azure Cluster
+### Create Azure Cluster
 create_azure_cluster.sh: Main script to create the VMs, download and install Couchbase Server and set up the cluster with a final rebalance. Will require you to login to your Azure account. 
 Settings will also, by default, allow a Windows Server jumpbox to be configured in the same vnet (see the vnet_name. setting above for details on vnets). The jumpbox ensures you don't expose your Couchbase Server directly to the internet. You can disable the jumpbox if you are using an existing vnet where you already have a browser to administer couchbase server, Or if you are simply looking to administer through the couchbase-cli commandline interface. 
 
-###Delete Azure Cluster
+### Delete Azure Cluster
 delete_azure_cluster.sh: used to clean up the jumpbox, cluster and vms. Will require you to login to your Azure account. cleanup looks for the vm_name_prefix set in the settings file to match and delete VMs. To ensure it does not do accidental deletes, enable_fast_delete is off by default. You can enable_fast_delete, however make sure your prefix is unique and does not match your existing VMs in your subscription. 
