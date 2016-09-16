@@ -1,18 +1,17 @@
-# couchbase-azure simple & automated setup
+# couchbase-azure 
 
-Simple and automated setup for a couchbase server cluster on azure. Ideal for build up and teardown of test environments or functional tests. Works with couchbase server v4.0 or later. Simply point to the build you like to use and provide azure account details in the settings.sh file, followed by create_azure_cluster. use delete_azure_cluster to destroy the cluster.
-_Limitations_: There are a few limitations with the scripts. 
-- _ephemeral drives_: scripts are mainly tuned for dev/test systems and not for production deployment. for production deployment, couchbase server requires mounted drives that can live through node restarts etc.
+This repo provides, simple and automated setup for couchbase server cluster on azure. Ideal for fast, simple, automated build-up and tear-down of test environments. Works with couchbase server v4.0 or later. Simply point to the build you like to use and provide azure account details in the settings.sh file, followed by create_azure_cluster. use delete_azure_cluster to destroy the cluster.
+
+_Limitations_: 
 - _xdcr (cross data-center replication)_: you can use the scripts to deploy 2 clusters to 2 seperate regions. however the scripts are not design to make xdcr working with couchbase server. there are a few other tricks required to do that.
-- _app deployment_: i typically use the jumpbox for test runs which is created in the same subnet. 
 
-##OSx Scripts: 
+## OSx Scripts (Scripts for MacOS): 
 OSx script for setting up a multi node Couchbase Server cluster on Azure VMs.
 
-###Prerequisites
+### Prerequisites
 install_prereqs.sh: Install required dependencies like node and azure-cli. Run this before your first run.
 
-###Settings
+### Settings
 settings.sh: setting file for the automated cluster setup. seach for and modify the variables marked with text "TODO" in the setting file before running create_ and delete_ scripts. the scripts will fail if you do not review and assign the required values for these variables at minimum.
 
 **Couchbase Server Settings:**
