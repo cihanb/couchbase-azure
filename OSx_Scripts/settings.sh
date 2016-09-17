@@ -49,7 +49,7 @@ azure_subscription_id="00000000-0000-0000-0000-000000000000"
 vm_auth_cert_public="~/.ssh/id_rsa.pub"
 vm_auth_cert_private="~/.ssh_id_rsa"
 #prefix to use for the VM name for all nodes 
-vm_name_prefix="cb_"
+vm_name_prefix="cb"
 #vnet name to keeps azure vms in the same subnet 
 vnet_name="cb-vnet1" 
 #azure service name for all nodes
